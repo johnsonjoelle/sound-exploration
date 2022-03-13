@@ -1,8 +1,7 @@
-input.onSound(DetectedSound.Loud, function () {
-    bluetooth.uartWriteNumber(1)
-})
-input.onSound(DetectedSound.Quiet, function () {
-    bluetooth.uartWriteNumber(0)
+bluetooth.onBluetoothConnected(function () {
+    bluetooth.startAccelerometerService()
+    bluetooth.startButtonService()
+    bluetooth.startTemperatureService()
 })
 basic.showIcon(IconNames.Happy)
 bluetooth.startUartService()
